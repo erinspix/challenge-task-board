@@ -1,7 +1,7 @@
-/* Overall Page Style */
+/* General Page Style */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7;
+    font-family: 'Poppins', sans-serif; /* Fun, modern font */
+    background-color: #fcefee; /* Light pastel pink */
     color: #333;
     margin: 0;
     padding: 0;
@@ -27,23 +27,25 @@ header {
 }
 
 h1 {
-    font-size: 2.5em;
-    color: #4a90e2;
+    font-family: 'Lobster', cursive; /* Fun, playful title font */
+    font-size: 3em;
+    color: #ffabab; /* Soft pastel red */
 }
 
 button#addTaskBtn {
     padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4a90e2;
+    font-size: 1.1em;
+    background-color: #b3e5fc; /* Soft pastel blue */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 button#addTaskBtn:hover {
-    background-color: #357ab8;
+    background-color: #81d4fa; /* Slightly darker pastel blue */
 }
 
 /* Columns and Task Cards */
@@ -55,7 +57,7 @@ button#addTaskBtn:hover {
 
 .column {
     width: 30%;
-    background-color: #f0f0f0;
+    background-color: #f3e5f5; /* Pastel lavender */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -64,18 +66,21 @@ button#addTaskBtn:hover {
 .column h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #4a90e2;
+    color: #ce93d8; /* Pastel purple */
     font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Task Cards */
 .task-card {
     background-color: #fff;
     margin-bottom: 20px;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     position: relative;
+    font-family: 'Poppins', sans-serif;
 }
 
 .task-card:hover {
@@ -95,34 +100,25 @@ button#addTaskBtn:hover {
     color: #666;
 }
 
-/* Color Coding for Task Cards */
-.task-card[style*="background-color: yellow"] {
-    border-left: 5px solid #ffd700;
+/* Pastel Color Coding for Task Cards */
+.task-card[style*="background-color: #FFD700"] {
+    background-color: #f9e79f; /* Soft pastel yellow */
+    border-left: 5px solid #ffd700; /* Maintain yellow border */
 }
 
 .task-card[style*="background-color: red"] {
+    background-color: #ffcccb; /* Soft pastel red */
     border-left: 5px solid #ff4d4d;
 }
 
 .task-card[style*="background-color: green"] {
+    background-color: #d0f8ce; /* Soft pastel green */
     border-left: 5px solid #28a745;
 }
 
-/* Delete Button Styling */
-.task-card .delete-task {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #e74c3c;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-.task-card .delete-task:hover {
-    color: #c0392b;
+.task-card[style*="background-color: blue"] {
+    background-color: #cce5ff; /* Soft pastel blue */
+    border-left: 5px solid #4da6ff;
 }
 
 /* Modal Styling */
@@ -149,52 +145,43 @@ button#addTaskBtn:hover {
     animation: modalShow 0.3s ease-out;
 }
 
-@keyframes modalShow {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 1.5em;
-    cursor: pointer;
-    color: #666;
-}
-
-/* Form Elements Styling */
-form label {
-    display: block;
+/* Bolder, darker font for modal text */
+.modal-content p {
     font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
+    color: #333;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
 }
 
-form input, form textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 1em;
-}
-
-form textarea {
-    resize: vertical;
-}
-
-form button[type="submit"] {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4a90e2;
+/* Button Styling */
+.modal-content button {
+    padding: 10px 15px;
+    background-color: #ffabab; /* Pastel pink */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
-form button[type="submit"]:hover {
-    background-color: #357ab8;
+.modal-content button:hover {
+    background-color: #ff8585; /* Slightly darker pastel pink */
+}
+
+/* Delete Button */
+.task-card .delete-task {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e74c3c;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.task-card .delete-task:hover {
+    color: #c0392b;
 }

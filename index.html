@@ -1,3 +1,7 @@
+<!-- Add Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
 <!-- Include jQuery library for DOM manipulation -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -11,13 +15,13 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <!-- Include the main JavaScript file that contains the app's functionality -->
-<script src="./js/script.js"></script>
+<script src="./assets/js/script.js"></script>
 
 <!-- Main container for the Task Board UI -->
 <div class="container">
 
     <!-- Include the main CSS file for styling the Task Board -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
     <!-- Header section with the title and a button to add new tasks -->
     <header>
@@ -42,6 +46,14 @@
             <h2>Completed</h2>
             <div id="completed-tasks"></div>
         </div>
+    </div>
+</div>
+<!-- Notice modal for past due date -->
+<div id="pastDeadlineNotice" class="modal" style="display: none;">
+    <div class="modal-content">
+        <p>The due date you have selected is in the past. Are you sure you want to proceed?</p>
+        <button id="understandBtn">I understand</button>
+        <button class="closeNotice">Cancel</button>
     </div>
 </div>
 
