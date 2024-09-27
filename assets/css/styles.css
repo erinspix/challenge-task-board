@@ -129,9 +129,89 @@ button#addTaskBtn:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     z-index: 1000;
+    justify-content: center; /* Horizontally center the modal */
+    align-items: center; /* Vertically center the modal */
+    display: flex; /* Flexbox for easy centering */
 }
+
+/* Modal Content Styling */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 40%; /* Adjust the width to make it more compact */
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: modalShow 0.3s ease-out;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    gap: 20px; /* Space between form fields */
+}
+
+/* Close Button */
+.modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5em;
+    color: #999;
+    cursor: pointer;
+}
+
+.modal-content .close:hover {
+    color: #333;
+}
+
+/* Form Label Styling */
+.modal-content label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Form Input Styling */
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content textarea {
+    width: 100%; /* Make inputs full width */
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Form Input Hover/Focus Effect */
+.modal-content input[type="text"]:focus,
+.modal-content input[type="date"]:focus,
+.modal-content textarea:focus {
+    border-color: #81d4fa; /* Light blue border on focus */
+    outline: none;
+}
+
+/* Button Styling */
+.modal-content button[type="submit"] {
+    padding: 12px;
+    background-color: #b3e5fc; /* Light blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #81d4fa; /* Slightly darker blue on hover */
+}
+
 
 .modal-content {
     background-color: #fff;
@@ -184,4 +264,49 @@ button#addTaskBtn:hover {
 
 .task-card .delete-task:hover {
     color: #c0392b;
+}
+
+/* Past Due Date Modal Styling */
+#pastDeadlineNotice {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay to distinguish it */
+    z-index: 2000; /* Higher z-index than the task modal */
+    justify-content: center; /* Horizontally center the modal */
+    align-items: center; /* Vertically center the modal */
+    display: flex;
+}
+
+/* Content of Past Due Date Modal */
+#pastDeadlineNotice .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 40%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center text and buttons */
+    position: relative;
+    z-index: 2000; /* Ensure the content is layered above */
+}
+
+/* Button styling for Past Due Date Modal */
+#pastDeadlineNotice button {
+    padding: 12px 20px;
+    margin: 10px;
+    background-color: #ff8585; /* Slightly darker pink for the buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+#pastDeadlineNotice button:hover {
+    background-color: #e74c3c; /* Darker red for hover effect */
 }

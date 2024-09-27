@@ -2,6 +2,13 @@ $(document).ready(function() {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     renderTasks(tasks); // Render the tasks on page load
 
+    // Initialize jQuery datepicker on the deadline input field
+    $('#deadline').datepicker({
+        dateFormat: 'yy-mm-dd',  // Ensure the format matches your existing logic
+        changeMonth: true,
+        changeYear: true
+    });
+
     // Show the modal to add a new task when the "Add Task" button is clicked
     $('#addTaskBtn').click(function() {
         $('#taskModal').show(); // Display modal
